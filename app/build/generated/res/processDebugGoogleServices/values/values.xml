@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">287516546882-gche7l5ica51q7p5c4svsq73soc8g7qt.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">287516546882</string>
+    <string name="google_api_key" translatable="false">AIzaSyDAG2-KVcKfLAb6crmjYafccqXkg9Ctj64</string>
+    <string name="google_app_id" translatable="false">1:287516546882:android:6a510fb348f35243f69adb</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDAG2-KVcKfLAb6crmjYafccqXkg9Ctj64</string>
+    <string name="google_storage_bucket" translatable="false">music-app-vibesync.firebasestorage.app</string>
+    <string name="project_id" translatable="false">music-app-vibesync</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Matches SplashScreen.kt's VibeSyncLogoMark exactly (ring + violet-to-magenta disc + a plain
+     white play triangle, no separate music-note badge). The earlier version's extra note glyph
+     read as cluttered at actual launcher-icon display size, so this is deliberately one clean
+     mark instead of two competing ones. Same identity, everywhere the logo appears. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer ring -->
+    <path
+        android:strokeWidth="5.5"
+        android:pathData="M54,24 A30,30 0 1,1 53.99,24">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:type="sweep"
+                android:centerX="54"
+                android:centerY="54"
+                android:startColor="#6C4CF0"
+                android:centerColor="#E23F8E"
+                android:endColor="#6C4CF0" />
+        </aapt:attr>
+    </path>
+    <!-- Center disc -->
+    <path android:pathData="M54,54 m-19,0 a19,19 0 1,1 38,0 a19,19 0 1,1 -38,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="50"
+                android:centerY="50"
+                android:gradientRadius="21"
+                android:startColor="#B69CFF"
+                android:endColor="#6C4CF0" />
+        </aapt:attr>
+    </path>
+    <!-- Play triangle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M49,45 L49,63 L64,54 Z" />
+</vector>

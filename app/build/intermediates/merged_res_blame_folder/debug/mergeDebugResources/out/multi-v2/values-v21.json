@@ -1,0 +1,85 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.vibesync.app-mergeDebugResources-65:/values-v21/values-v21.xml",
+            "map": [
+                {
+                    "source": "/home/bsi-108/.gradle/caches/transforms-4/e4fae3caa166fe5a98b44122721f881b/transformed/media3-ui-1.4.1/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,114",
+                        "endLines": "2,7",
+                        "endColumns": "58,10",
+                        "endOffsets": "109,396"
+                    },
+                    "to": {
+                        "startLines": "3,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "173,427",
+                        "endLines": "3,11",
+                        "endColumns": "58,10",
+                        "endOffsets": "227,709"
+                    }
+                },
+                {
+                    "source": "/home/bsi-108/.gradle/caches/transforms-4/fa05fb29a9a0d465a7e3a93222a3b1f9/transformed/core-1.13.1/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,173,237,304,368,484,610,736,864,1036",
+                        "endLines": "2,3,4,5,6,7,8,9,12,17",
+                        "endColumns": "117,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "168,232,299,363,479,605,731,859,1031,1383"
+                    },
+                    "to": {
+                        "startLines": "2,4,5,6,12,13,20,24,36,39",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,232,296,363,714,830,1275,1563,2345,2517",
+                        "endLines": "2,4,5,6,12,13,20,24,38,43",
+                        "endColumns": "117,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "168,291,358,422,825,951,1396,1686,2512,2864"
+                    }
+                },
+                {
+                    "source": "/home/bsi-108/.gradle/caches/transforms-4/a613e1d44783b05b7ce003b5f964977b/transformed/credentials-play-services-auth-1.2.0-rc01/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "543"
+                    },
+                    "to": {
+                        "startLines": "28",
+                        "startColumns": "4",
+                        "startOffsets": "1852",
+                        "endLines": "35",
+                        "endColumns": "12",
+                        "endOffsets": "2340"
+                    }
+                },
+                {
+                    "source": "/home/bsi-108/.gradle/caches/transforms-4/3a5e5edee1c82b21afc328c9d6ea093d/transformed/media3-session-1.4.1/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2,5,8,11",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,217,374,536",
+                        "endLines": "4,7,10,13",
+                        "endColumns": "10,10,10,10",
+                        "endOffsets": "212,369,531,692"
+                    },
+                    "to": {
+                        "startLines": "14,17,21,25",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "956,1118,1401,1691",
+                        "endLines": "16,19,23,27",
+                        "endColumns": "10,10,10,10",
+                        "endOffsets": "1113,1270,1558,1847"
+                    }
+                }
+            ]
+        }
+    ]
+}

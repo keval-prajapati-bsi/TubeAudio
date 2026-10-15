@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "287516546882",
+    "project_id": "music-app-vibesync",
+    "storage_bucket": "music-app-vibesync.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287516546882:android:6a510fb348f35243f69adb",
+        "android_client_info": {
+          "package_name": "com.vibesync.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287516546882-192vrubigbc5e5kr18ahb4q6mg0dlsir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vibesync.app",
+            "certificate_hash": "01fd06b7e9e684a2b9f09e50897433a7becbd165"
+          }
+        },
+        {
+          "client_id": "287516546882-gche7l5ica51q7p5c4svsq73soc8g7qt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAG2-KVcKfLAb6crmjYafccqXkg9Ctj64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287516546882-gche7l5ica51q7p5c4svsq73soc8g7qt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

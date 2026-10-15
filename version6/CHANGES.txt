@@ -1,0 +1,67 @@
+VibeSync — version 33
+======================
+
+First round sourced from the real Figma file (not a typed spec, not a screenshot) -- 31 actual
+screens pulled via the Figma REST API (a personal access token, after the MCP connector turned out
+to be capped at ~6 calls/month on the Starter plan) and reverse-engineered from real fill/stroke/
+corner-radius/font frequency counts across the whole document.
+
+1. Design tokens now come from the actual file, not eyeballed
+   - `Color.kt`: the file's real dominant colors -- Background #09090B, Surface/Cards #18181B,
+     Border #27272A, Text primary #FAFAFA, Text secondary #A1A1AA, Accent #7C3AED (violet-600).
+     Notably #7C3AED is the exact color this app's identity used *before* the lime/orchid detour a
+     few rounds back -- the Figma file effectively confirms violet was right, just paired with a
+     true Zinc-neutral dark scale instead of the custom near-black/pink one. Added `SuccessGreen`
+     (#10B981, emerald-500) for the online-status dots the Friends screen actually uses.
+   - `Dimens.kt`: corner radii from the same frequency analysis -- 16dp is the dominant card
+     radius by a wide margin, 100dp is the file's own fully-round pill/avatar convention.
+   - `Type.kt` weights were already close from the prior round; left as-is.
+
+2. Bottom navigation corrected to match the file's actual (and more current) pattern
+   - The Figma file itself is inconsistent: the older `home-screen` frame still shows a 4-tab
+     Home/Explore/Library/Menu bar, but all 8 screens in the file's newer "expansion board" (Party
+     Room, Local Room, Friends, Profile, Settings, etc.) consistently show a revised 5-tab
+     Home/Explore/Party/Library/Profile bar with no Menu entry at all. Treated the expansion board
+     as the current intent (newer, used far more consistently) -- Party and Profile are now real
+     bottom-nav destinations instead of being buried in a "..." menu.
+   - Podcasts and Local Room don't have their own tab in either version of the Figma nav, so they
+     now live as two new rows on the real Profile screen (which already had Downloads/Friends/
+     History rows) rather than being orphaned.
+
+3. Three dialogs converted from centered popups to bottom sheets
+   - The Figma file draws a clear, consistent line: short confirm/rename/error prompts are
+     centered modals, but anything with real content (Create Playlist, Add to Playlist, track
+     options) is a bottom sheet. Converted `CreatePlaylistDialog`, `AddToPlaylistDialog`, and
+     `TrackRow`'s kebab menu (previously a `DropdownMenu`) to `ModalBottomSheet` to match --
+     same content and callbacks in each case, just the presentation shape changed.
+   - The track options sheet also picked up a title header (matching Figma's own version), and
+     deliberately did NOT add "Go to Artist" / "Report" from the reference -- this app has no
+     artist-page or content-moderation feature behind either, so they'd be dead taps. Same
+     don't-fake-a-feature discipline as everywhere else in this app.
+
+4. Figma access set up for real, going forward
+   - MCP connector (`figma.com` OAuth) is connected but effectively unusable at volume on a
+     Starter-tier plan (~6 calls/month). Switched to a Figma personal access token instead, stored
+     in `TubeAudio_App/.env` (`FIGMA_TOKEN=...`) -- REST API calls from that token aren't subject
+     to the MCP cap, which is what made pulling all 31 screens' real fill/style data possible in
+     one pass. Worth knowing: this project isn't a git repo, so there's no `.gitignore` need right
+     now, but if it ever becomes one, `.env` needs to be excluded before any commit.
+
+Scope note, stated plainly: this covers the design-token foundation, the nav-structure correction,
+and the three bottom-sheet conversions -- not a full pixel-reconstruction of all 31 screens' unique
+layouts in one pass (Playlist Detail's hero header, Settings' theme/accent picker rows, Party Room's
+exact participant-avatar layout, etc. all have real Figma data waiting, just not yet applied
+screen-by-screen). The real per-screen structure is already extracted and sitting in
+`/tmp/.../scratchpad/figma_file.json` for the next round -- no more Figma calls needed to keep
+going, MCP or REST.
+
+Build: BUILD SUCCESSFUL, versionCode 33 / versionName "33.0", clean compile after three real
+mistakes caught and fixed along the way: a `RowScope` receiver conflict from nesting a
+`NavigationBarItem` in a `Box` (fixed by moving the anchor Box inside the icon slot instead), and
+two dropped imports (`DropdownMenuItem`, then `CardBorder`/`BorderStroke`) from converting dialogs
+to bottom sheets -- all caught by the compiler, not shipped broken.
+
+Honest limitation, same as always: not run on a real device. Bottom sheets in particular need a
+real-device check -- drag-to-dismiss gesture feel, whether the sheet's default scrim/elevation
+reads correctly against the new near-black palette, and that the Create Playlist sheet's photo
+picker still launches correctly from inside a ModalBottomSheet's composition context.
